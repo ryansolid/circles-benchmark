@@ -16,6 +16,7 @@ Benchmark = {
   const buttons = document.getElementById('buttons');
   const timing = document.getElementById('timing');
   const grid = document.getElementById('grid');
+  const running = document.getElementById('running');
 
   let timer, loopTime, loopCount, totalTime, currentLoop, currentImpl;
   function benchLoop() {
@@ -32,7 +33,7 @@ Benchmark = {
   function stop() {
     timer && clearTimeout(timer);
     currentImpl && currentImpl.cleanup && currentImpl.cleanup();
-    timing.textContent = 'Performance';
+    running.textContent = 'None';
     grid.textContent = '';
   }
 
@@ -50,6 +51,7 @@ Benchmark = {
       let impl;
       if (impl = Benchmark.Framework[framework.name]) {
         currentImpl = impl;
+        running.textContent = framework.name;
         impl.start();
         currentLoop = impl.loop;
         benchLoop();
