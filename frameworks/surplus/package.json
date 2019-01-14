@@ -1,0 +1,29 @@
+{
+  "name": "circles-benchmark-surplus",
+  "version": "0.0.1",
+  "description": "Surplus implementation of Circles Benchmark",
+  "scripts": {
+    "watch": "rollup -c -w",
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "circles-benchmark",
+    "javascript",
+    "framework"
+  ],
+  "author": "Ryan Carniato",
+  "license": "MIT",
+  "homepage": "https://github.com/ryansolid/circles-benchmark",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryansolid/circles-benchmark.git"
+  },
+  "devDependencies": {
+    "rollup": "^1.1.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-terser": "^4.0.1",
+    "rollup-plugin-surplus": "0.5.0",
+    "s-js": "^0.4.9",
+    "surplus": "^0.5.3"
+  }
+}

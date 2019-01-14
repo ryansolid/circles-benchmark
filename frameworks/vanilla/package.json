@@ -1,0 +1,25 @@
+{
+  "name": "circles-benchmark-vanilla",
+  "version": "0.0.1",
+  "description": "Vanilla implementation of Circles Benchmark",
+  "scripts": {
+    "watch": "rollup -c -w",
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "circles-benchmark",
+    "javascript",
+    "framework"
+  ],
+  "author": "Ryan Carniato",
+  "license": "MIT",
+  "homepage": "https://github.com/ryansolid/circles-benchmark",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryansolid/circles-benchmark.git"
+  },
+  "devDependencies": {
+    "rollup": "^1.1.0",
+    "rollup-plugin-terser": "^4.0.2"
+  }
+}
