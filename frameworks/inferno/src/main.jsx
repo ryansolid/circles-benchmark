@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom'
+import { render, Component } from 'inferno'
 
 function createBoxes(number) {
   const boxes = [];
@@ -23,7 +22,7 @@ class Main extends Component {
   constructor() {
     super(...arguments);
     this.state = { boxes: createBoxes(Benchmark.number) };
-    Benchmark.Framework.React.loop = () =>
+    Benchmark.Framework.Inferno.loop = () =>
       this.setState({boxes: this.state.boxes.map(tick)})
   }
 
@@ -41,7 +40,7 @@ class Main extends Component {
 }
 
 const grid = document.getElementById('grid');
-Benchmark.Framework.React = {
-  start() { ReactDOM.render(<Main />, grid); },
-  cleanup() { ReactDOM.unmountComponentAtNode(grid); }
+Benchmark.Framework.Inferno = {
+  start() { render(<Main />, grid); },
+  cleanup() { render(null, grid); }
 }

@@ -25,7 +25,7 @@ function tick(box) {
 
 const Main = (element) => {
   const boxes = createBoxes(Benchmark.number);
-  Benchmark.Framework.Knockout.loop = () => Promise.resolve().then(() => boxes.forEach(tick));
+  Benchmark.Framework.Knockout.loop = () => boxes.forEach(tick);
 
   element.innerHTML = `
     <!-- ko foreach: boxes -->

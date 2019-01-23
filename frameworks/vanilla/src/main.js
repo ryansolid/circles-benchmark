@@ -24,9 +24,7 @@ Benchmark.Framework.Vanilla = {
     grid.innerHTML = (boxes.map(createRow)).join('');
   },
   loop() {
-    Promise.resolve().then(() => {
-      for(let i = 0, node = grid.firstChild; node; node = node.nextSibling, i++ )
-        tick(boxes[i], node.firstChild)
-    })
+    for(let i = 0, node = grid.firstChild; node; node = node.nextSibling, i++ )
+      tick(boxes[i], node.firstChild)
   }
 }

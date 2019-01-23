@@ -1,0 +1,32 @@
+{
+  "name": "circles-benchmark-react",
+  "version": "0.0.1",
+  "description": "React implementation of Circles Benchmark",
+  "scripts": {
+    "watch": "rollup -c -w",
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "circles-benchmark",
+    "javascript",
+    "framework"
+  ],
+  "author": "Ryan Carniato",
+  "license": "MIT",
+  "homepage": "https://github.com/ryansolid/circles-benchmark",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryansolid/circles-benchmark.git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "babel-plugin-inferno": "6.0.4",
+    "inferno": "6.3.1",
+    "rollup": "^1.1.0",
+    "rollup-plugin-babel": "4.2.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-replace": "^2.1.0",
+    "rollup-plugin-terser": "^4.0.1"
+  }
+}

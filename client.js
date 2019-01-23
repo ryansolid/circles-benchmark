@@ -1,5 +1,6 @@
 FRAMEWORKS = [
   {name: 'Backbone', version: '1.3.3'},
+  {name: 'Inferno', version: '6.3.1'},
   {name: 'Knockout', version: '3.4.2'},
   {name: 'React', version: '16.7.0'},
   {name: 'Solid', version: '0.3.6'},

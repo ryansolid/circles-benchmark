@@ -26,7 +26,7 @@ function tick(box) {
 
 const Main = () => {
   const boxes = createBoxes(Benchmark.number);
-  Benchmark.Framework.Surplus.loop = () => Promise.resolve().then(() => S.freeze(() => boxes.forEach(tick)));
+  Benchmark.Framework.Surplus.loop = () => S.freeze(() => boxes.forEach(tick));
 
   return boxes.map((box, index) =>
     <div class="box-view">
