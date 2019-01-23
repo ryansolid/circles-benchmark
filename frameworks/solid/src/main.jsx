@@ -26,12 +26,12 @@ const Main = () => {
   return <>{
     state.boxes.map((box, index) =>
       <div class="box-view">
-        <div class="box" id={index} textContent={(box.content)} style={({
+        <div class="box" id={index} style={({
             top: `${box.top}px`,
             left: `${box.left}px`,
             background: `rgb(0,0,${box.color})`
           })}
-        />
+        >{(box.content)}</div>
       </div>
     )
   }</>

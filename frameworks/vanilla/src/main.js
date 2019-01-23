@@ -1,9 +1,9 @@
 function tick(box, el) {
   const count = ++box.count
-  el.style.top = `${Math.sin(count / 10) * 10}px`;
-  el.style.left = `${Math.cos(count / 10) * 10}px`;
-  el.style.background = `rgb(0,0,${count % 255})`;
-  el.innerText = count % 100;
+  el.style.setProperty('top', `${Math.sin(count / 10) * 10}px`);
+  el.style.setProperty('left', `${Math.cos(count / 10) * 10}px`);
+  el.style.setProperty('background', `rgb(0,0,${count % 255})`);
+  el.firstChild.data = count % 100;
 }
 
 function createBoxes(number) {
@@ -13,7 +13,7 @@ function createBoxes(number) {
   return boxes;
 }
 
-const createRow = box => `<div class='box-view'><div class='box' id='${box.id}'></div></div>`
+const createRow = (box, i) => `<div class='box-view'><div class='box' id='${i + 1}'> </div></div>`
 
 const grid = document.getElementById('grid');
 

@@ -30,13 +30,13 @@ const Main = () => {
 
   return boxes.map((box, index) =>
     <div class="box-view">
-      <div class="box" id={index}  textContent={box.content()}
+      <div class="box" id={index}
         style={{
           top: `${box.top()}px`,
           left: `${box.left()}px`,
           background: `rgb(0,0,${box.color()})`
         }}
-      />
+      >{box.content()}</div>
     </div>
   )
 }
