@@ -5,6 +5,7 @@ FRAMEWORKS = [
   {name: 'Preact', version: '8.4.2'},
   {name: 'React', version: '16.7.0'},
   {name: 'Solid', version: '0.3.6'},
+  {name: 'SolidSignals', version: '0.3.6'},
   {name: 'Surplus', version: '0.5.3'},
   {name: 'Vanilla', version: ''}
 ];

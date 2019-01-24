@@ -19,6 +19,7 @@ function tick(box) {
   };
 }
 
+// More comparable to React
 const Main = () => {
   const [state, setState] = useState({ boxes: createBoxes(Benchmark.number) });
   Benchmark.Framework.Solid.loop = () =>

@@ -9,19 +9,18 @@ function createBoxes(number) {
       top: S.data(0),
       left: S.data(0),
       content: S.data(0),
-      count: S.data(0),
-      color: S.data()
+      color: S.data(),
+      count: 0
     });
   return boxes;
 }
 
 function tick(box) {
-  const count = box.count() + 1
+  const count = ++box.count;
   box.top(Math.sin(count / 10) * 10)
   box.left(Math.cos(count / 10) * 10)
   box.color(count % 255)
   box.content(count % 100)
-  box.count(count)
 }
 
 const Main = () => {
