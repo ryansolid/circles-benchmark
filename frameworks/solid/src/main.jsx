@@ -21,7 +21,8 @@ function tick(box) {
 
 const Main = () => {
   const [state, setState] = useState({ boxes: createBoxes(Benchmark.number) });
-  Benchmark.Framework.Solid.loop = () => setState('boxes', '*', tick);
+  Benchmark.Framework.Solid.loop = () =>
+    Promise.resolve().then(() => setState('boxes', '*', tick));
 
   return <>{
     state.boxes.map((box, index) =>

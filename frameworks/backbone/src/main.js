@@ -52,9 +52,11 @@ Benchmark.Framework.Backbone = {
   },
 
   loop() {
-    for (var i = 0, l = boxes.length; i < l; i++) {
-      boxes[i].tick();
-    }
+    Promise.resolve().then(() => {
+      for (var i = 0, l = boxes.length; i < l; i++) {
+        boxes[i].tick();
+      }
+    })
   },
 
   cleanup() { boxes = null; }

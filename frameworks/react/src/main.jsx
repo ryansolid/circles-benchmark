@@ -24,7 +24,7 @@ class Main extends Component {
     super(...arguments);
     this.state = { boxes: createBoxes(Benchmark.number) };
     Benchmark.Framework.React.loop = () =>
-      this.setState({boxes: this.state.boxes.map(tick)})
+    Promise.resolve().then(() => this.setState({boxes: this.state.boxes.map(tick)}))
   }
 
   render() {

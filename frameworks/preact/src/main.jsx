@@ -1,4 +1,4 @@
-import { render, Component } from 'inferno'
+import { h, render, Component } from 'preact';
 
 function createBoxes(number) {
   const boxes = [];
@@ -22,25 +22,27 @@ class Main extends Component {
   constructor() {
     super(...arguments);
     this.state = { boxes: createBoxes(Benchmark.number) };
-    Benchmark.Framework.Inferno.loop = () =>
-      Promise.resolve().then(() => this.setState({boxes: this.state.boxes.map(tick)}))
+    Benchmark.Framework.Preact.loop = () =>
+      this.setState({boxes: this.state.boxes.map(tick)})
   }
 
   render() {
-    return this.state.boxes.map((box, i) =>
-      <div className="box-view" key={i}>
-        <div className="box" id={i} style={{
-          top: `${box.top}px`,
-          left: `${box.left}px`,
-          background: `rgb(0,0,${box.color})`}}
-        >{box.content}</div>
-      </div>
-    );
+    return <span>{
+      this.state.boxes.map((box, i) =>
+        <div className="box-view" key={i}>
+          <div className="box" id={i} style={{
+            top: `${box.top}px`,
+            left: `${box.left}px`,
+            background: `rgb(0,0,${box.color})`}}
+          >{box.content}</div>
+        </div>
+      )
+    }</span>
   }
 }
 
 const grid = document.getElementById('grid');
-Benchmark.Framework.Inferno = {
+Benchmark.Framework.Preact = {
   start() { render(<Main />, grid); },
   cleanup() { render(null, grid); }
 }

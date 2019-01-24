@@ -1,7 +1,7 @@
 {
-  "name": "circles-benchmark-inferno",
+  "name": "circles-benchmark-preact",
   "version": "0.0.1",
-  "description": "Inferno implementation of Circles Benchmark",
+  "description": "Preact implementation of Circles Benchmark",
   "scripts": {
     "watch": "rollup -c -w",
     "build": "rollup -c"
@@ -20,8 +20,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
-    "babel-plugin-inferno": "6.0.4",
-    "inferno": "6.3.1",
+    "@babel/plugin-transform-react-jsx": "7.3.0",
+    "preact": "8.4.2",
     "rollup": "^1.1.0",
     "rollup-plugin-babel": "4.2.0",
     "rollup-plugin-commonjs": "^9.2.0",
