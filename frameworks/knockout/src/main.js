@@ -36,10 +36,11 @@ const Main = (element) => {
   return { boxes };
 }
 
-const grid = document.getElementById('grid');
+
 Benchmark.Framework.Knockout = {
   start() {
+    const grid = document.getElementById('grid');
     ko.applyBindings(Main(grid), grid);
   },
-  cleanup() { ko.cleanNode(grid); }
+  cleanup() { ko.cleanNode(document.getElementById('grid')); }
 }

@@ -15,12 +15,11 @@ function createBoxes(number) {
 
 const createRow = (box, i) => `<div class='box-view'><div class='box' id='${i + 1}'> </div></div>`
 
-const grid = document.getElementById('grid');
-
-let boxes;
+let grid, boxes;
 Benchmark.Framework.Vanilla = {
   start() {
     boxes = createBoxes(Benchmark.number);
+    grid = document.getElementById('grid');
     grid.innerHTML = (boxes.map(createRow)).join('');
   },
   loop() {

@@ -41,8 +41,7 @@ class Main extends Component {
   }
 }
 
-const grid = document.getElementById('grid');
 Benchmark.Framework.Preact = {
-  start() { render(<Main />, grid); },
-  cleanup() { render(null, grid); }
+  start() { render(<Main />, document.getElementById('grid')); },
+  cleanup() { render(null, document.getElementById('grid')); }
 }

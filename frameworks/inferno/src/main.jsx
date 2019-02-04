@@ -39,8 +39,7 @@ class Main extends Component {
   }
 }
 
-const grid = document.getElementById('grid');
 Benchmark.Framework.Inferno = {
-  start() { render(<Main />, grid); },
-  cleanup() { render(null, grid); }
+  start() { render(<Main />, document.getElementById('grid')); },
+  cleanup() { render(null, document.getElementById('grid')); }
 }

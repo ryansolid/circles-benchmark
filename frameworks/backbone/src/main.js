@@ -39,10 +39,10 @@ const BoxView = Backbone.NativeView.extend({
 });
 
 let boxes;
-const grid = document.getElementById('grid');
 
 Benchmark.Framework.Backbone = {
   start() {
+    const grid = document.getElementById('grid');
     boxes = _.map(_.range(Benchmark.number), i => {
       const box = new Box({number: i});
       const view = new BoxView({model: box});

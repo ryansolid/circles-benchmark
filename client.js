@@ -2,6 +2,7 @@ FRAMEWORKS = [
   {name: 'Backbone', version: '1.3.3'},
   {name: 'Inferno', version: '6.3.1'},
   {name: 'Knockout', version: '3.4.2'},
+  {name: 'LitHTML', version: '1.0.0'},
   {name: 'Preact', version: '8.4.2'},
   {name: 'React', version: '16.7.0'},
   {name: 'Solid', version: '0.3.6'},
@@ -18,8 +19,8 @@ Benchmark = {
 (function() {
   const buttons = document.getElementById('buttons');
   const timing = document.getElementById('timing');
-  const grid = document.getElementById('grid');
   const running = document.getElementById('running');
+  let grid = document.getElementById('grid');
 
   let timer, loopTime, loopCount, totalTime, currentLoop, currentImpl;
   function benchLoop() {
@@ -37,7 +38,10 @@ Benchmark = {
     timer && clearTimeout(timer);
     currentImpl && currentImpl.cleanup && currentImpl.cleanup();
     running.textContent = 'None';
-    grid.textContent = '';
+    let newGrid = document.createElement('div');
+    newGrid.id = 'grid';
+    document.body.replaceChild(newGrid, grid);
+    grid = newGrid;
   }
 
   FRAMEWORKS.forEach(framework => {

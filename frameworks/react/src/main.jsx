@@ -40,8 +40,7 @@ class Main extends Component {
   }
 }
 
-const grid = document.getElementById('grid');
 Benchmark.Framework.React = {
-  start() { ReactDOM.render(<Main />, grid); },
-  cleanup() { ReactDOM.unmountComponentAtNode(grid); }
+  start() { ReactDOM.render(<Main />, document.getElementById('grid')); },
+  cleanup() { ReactDOM.unmountComponentAtNode(document.getElementById('grid')); }
 }
