@@ -1,4 +1,4 @@
-import { root, useState } from 'solid-js';
+import { createRoot, createState } from 'solid-js';
 import { r } from 'solid-js/dom';
 
 function createBoxes(number) {
@@ -21,7 +21,7 @@ function tick(box) {
 
 // More comparable to React
 const Main = () => {
-  const [state, setState] = useState({ boxes: createBoxes(Benchmark.number) });
+  const [state, setState] = createState({ boxes: createBoxes(Benchmark.number) });
   Benchmark.Framework.Solid.loop = () =>
     Promise.resolve().then(() => setState('boxes', '*', tick));
 
@@ -42,7 +42,7 @@ const Main = () => {
 let dispose;
 Benchmark.Framework.Solid = {
   start() {
-    root(disposer => {
+    createRoot(disposer => {
       dispose = disposer;
       document.getElementById('grid').appendChild(<Main />);
     })

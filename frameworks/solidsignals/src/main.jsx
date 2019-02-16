@@ -1,13 +1,13 @@
-import { root, useSignal, freeze } from 'solid-js';
+import { createRoot, createSignal, freeze } from 'solid-js';
 import { r } from 'solid-js/dom';
 
 function createBoxes(number) {
   const boxes = [];
   for (let i = 0; i < number; i++) {
-    const [top, setTop] = useSignal(0),
-      [left, setLeft] = useSignal(0),
-      [color, setColor] = useSignal(null),
-      [content, setContent] = useSignal(0);
+    const [top, setTop] = createSignal(0),
+      [left, setLeft] = createSignal(0),
+      [color, setColor] = createSignal(null),
+      [content, setContent] = createSignal(0);
     boxes.push({ top, left, color, content, setTop, setLeft, setColor, setContent, count: 0 });
 
   }
@@ -45,7 +45,7 @@ const Main = () => {
 let dispose;
 Benchmark.Framework.SolidSignals = {
   start() {
-    root(disposer => {
+    createRoot(disposer => {
       dispose = disposer;
       document.getElementById('grid').appendChild(<Main />);
     })
