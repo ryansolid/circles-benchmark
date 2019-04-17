@@ -19,11 +19,11 @@
     "url": "https://github.com/ryansolid/circles-benchmark.git"
   },
   "devDependencies": {
-    "rollup": "^1.1.0",
-    "rollup-plugin-node-resolve": "^4.0.0",
-    "rollup-plugin-terser": "^4.0.1",
+    "rollup": "^1.10.0",
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-terser": "^4.0.4",
     "rollup-plugin-surplus": "0.5.0",
-    "s-js": "^0.4.9",
-    "surplus": "^0.5.3"
+    "s-js": "0.4.9",
+    "surplus": "0.5.3"
   }
 }

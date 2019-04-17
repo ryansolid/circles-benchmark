@@ -1,12 +1,12 @@
 FRAMEWORKS = [
-  {name: 'Backbone', version: '1.3.3'},
-  {name: 'Inferno', version: '6.3.1'},
-  {name: 'Knockout', version: '3.4.2'},
+  {name: 'Backbone', version: '1.4.0'},
+  {name: 'Inferno', version: '7.1.11'},
+  {name: 'Knockout', version: '3.5.0'},
   {name: 'LitHTML', version: '1.0.0'},
   {name: 'Preact', version: '8.4.2'},
-  {name: 'React', version: '16.7.0'},
-  {name: 'Solid', version: '0.3.6'},
-  {name: 'SolidSignals', version: '0.3.6'},
+  {name: 'React', version: '16.8.6'},
+  {name: 'Solid', version: '0.5.0'},
+  {name: 'SolidSignals', version: '0.5.0'},
   {name: 'Surplus', version: '0.5.3'},
   {name: 'Vanilla', version: ''}
 ];

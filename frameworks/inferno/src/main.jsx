@@ -33,6 +33,7 @@ class Main extends Component {
           top: `${box.top}px`,
           left: `${box.left}px`,
           background: `rgb(0,0,${box.color})`}}
+          $HasTextChildren
         >{box.content}</div>
       </div>
     );
