@@ -7,7 +7,7 @@ const plugins = [
   resolve(),
   commonjs(),
   svelte(),
-  // terser()
+  terser()
 ];
 
 export default {
