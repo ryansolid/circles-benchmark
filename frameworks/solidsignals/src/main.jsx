@@ -1,5 +1,4 @@
 import { createRoot, createSignal, freeze } from 'solid-js';
-import { r } from 'solid-js/dom';
 
 function createBoxes(number) {
   const boxes = [];
