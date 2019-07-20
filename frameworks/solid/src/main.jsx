@@ -23,7 +23,7 @@ function tick(box) {
 const Main = () => {
   const [state, setState] = createState({ boxes: createBoxes(Benchmark.number) });
   Benchmark.Framework.Solid.loop = () =>
-    Promise.resolve().then(() => setState('boxes', '*', tick));
+    Promise.resolve().then(() => setState('boxes', {}, tick));
 
   return state.boxes.map((box, index) =>
     <div class="box-view">
