@@ -1,5 +1,5 @@
-import { createState } from 'solid-js';
-import { render } from 'solid-js/dom';
+import { createState } from "solid-js";
+import { render } from "solid-js/dom";
 
 function createBoxes(number) {
   const boxes = [];
@@ -21,26 +21,35 @@ function tick(box) {
 
 // More comparable to React
 const Main = () => {
-  const [state, setState] = createState({ boxes: createBoxes(Benchmark.number) });
+  const [state, setState] = createState({
+    boxes: createBoxes(Benchmark.number)
+  });
   Benchmark.Framework.Solid.loop = () =>
-    Promise.resolve().then(() => setState('boxes', {}, tick));
+    Promise.resolve().then(() => setState("boxes", {}, tick));
 
-  return state.boxes.map((box, index) =>
+  return state.boxes.map((box, index) => (
     <div class="box-view">
-      <div class="box" id={index} style={({
-        top: `${box.top}px`,
-        left: `${box.left}px`,
-        background: `rgb(0,0,${box.color})`
-      })}
-      >{(box.content)}</div>
+      <div
+        class="box"
+        id={index}
+        style={{
+          top: `${box.top}px`,
+          left: `${box.left}px`,
+          background: `rgb(0,0,${box.color})`
+        }}
+      >
+        {box.content}
+      </div>
     </div>
-  );
-}
+  ));
+};
 
 let dispose;
 Benchmark.Framework.Solid = {
   start() {
-    dispose = render(Main, document.getElementById('grid'));
+    dispose = render(Main, document.getElementById("grid"));
   },
-  cleanup() { dispose && dispose(); }
-}
+  cleanup() {
+    dispose && dispose();
+  }
+};

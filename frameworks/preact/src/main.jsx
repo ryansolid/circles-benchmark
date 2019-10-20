@@ -1,4 +1,4 @@
-import { h, render, Component } from 'preact';
+import { h, render, Component } from "preact";
 
 function createBoxes(number) {
   const boxes = [];
@@ -8,14 +8,14 @@ function createBoxes(number) {
 }
 
 function tick(box) {
-  const count = box.count + 1
+  const count = box.count + 1;
   return {
     top: Math.sin(count / 10) * 10,
     left: Math.cos(count / 10) * 10,
     color: count % 255,
     content: count % 100,
     count: count
-  }
+  };
 }
 
 class Main extends Component {
@@ -23,25 +23,37 @@ class Main extends Component {
     super(...arguments);
     this.state = { boxes: createBoxes(Benchmark.number) };
     Benchmark.Framework.Preact.loop = () =>
-      this.setState({boxes: this.state.boxes.map(tick)})
+      this.setState({ boxes: this.state.boxes.map(tick) });
   }
 
   render() {
-    return <span>{
-      this.state.boxes.map((box, i) =>
-        <div className="box-view" key={i}>
-          <div className="box" id={i} style={{
-            top: `${box.top}px`,
-            left: `${box.left}px`,
-            background: `rgb(0,0,${box.color})`}}
-          >{box.content}</div>
-        </div>
-      )
-    }</span>
+    return (
+      <span>
+        {this.state.boxes.map((box, i) => (
+          <div className="box-view" key={i}>
+            <div
+              className="box"
+              id={i}
+              style={{
+                top: `${box.top}px`,
+                left: `${box.left}px`,
+                background: `rgb(0,0,${box.color})`
+              }}
+            >
+              {box.content}
+            </div>
+          </div>
+        ))}
+      </span>
+    );
   }
 }
 
 Benchmark.Framework.Preact = {
-  start() { render(<Main />, document.getElementById('grid')); },
-  cleanup() { render(null, document.getElementById('grid')); }
-}
+  start() {
+    render(<Main />, document.getElementById("grid"));
+  },
+  cleanup() {
+    render(null, document.getElementById("grid"));
+  }
+};

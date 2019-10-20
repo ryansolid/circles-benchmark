@@ -19,9 +19,9 @@
     "url": "https://github.com/ryansolid/circles-benchmark.git"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.3",
+    "@babel/core": "^7.6.4",
     "@babel/plugin-transform-react-jsx": "7.3.0",
-    "preact": "8.4.2",
+    "preact": "10.0.1",
     "rollup": "^1.10.0",
     "rollup-plugin-babel": "4.3.2",
     "rollup-plugin-commonjs": "^9.3.4",
