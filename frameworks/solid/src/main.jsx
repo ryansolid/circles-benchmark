@@ -37,9 +37,8 @@ const Main = () => {
           left: `${box.left}px`,
           background: `rgb(0,0,${box.color})`
         }}
-      >
-        {box.content}
-      </div>
+        textContent={box.content}
+      />
     </div>
   ));
 };
