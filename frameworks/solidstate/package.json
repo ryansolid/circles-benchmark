@@ -1,7 +1,7 @@
 {
-  "name": "circles-benchmark-solidsignals",
+  "name": "circles-benchmark-solid",
   "version": "0.0.1",
-  "description": "Alternative Solid implementation of Circles Benchmark",
+  "description": "Solid implementation of Circles Benchmark",
   "scripts": {
     "watch": "rollup -c -w",
     "build": "rollup -c"
@@ -19,12 +19,12 @@
     "url": "https://github.com/ryansolid/circles-benchmark.git"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "babel-preset-solid": "~0.2.1",
-    "rollup": "^1.26.0",
-    "rollup-plugin-babel": "4.3.3",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "^5.1.2",
-    "solid-js": "0.13.0"
+    "@babel/core": "^7.9.0",
+    "babel-preset-solid": "~0.17.0",
+    "rollup": "^2.1.0",
+    "rollup-plugin-babel": "4.4.0",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "rollup-plugin-terser": "^5.3.0",
+    "solid-js": "0.17.0"
   }
 }

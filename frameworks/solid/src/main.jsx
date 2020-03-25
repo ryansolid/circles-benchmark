@@ -1,43 +1,53 @@
-import { createState } from "solid-js";
+import { createSignal, freeze } from "solid-js";
 import { render } from "solid-js/dom";
 
 function createBoxes(number) {
   const boxes = [];
-  for (let i = 0; i < number; i++)
-    boxes.push({ top: 0, left: 0, color: null, content: 0, count: 0 });
+  for (let i = 0; i < number; i++) {
+    const [top, setTop] = createSignal(0),
+      [left, setLeft] = createSignal(0),
+      [color, setColor] = createSignal(null),
+      [content, setContent] = createSignal(0);
+    boxes.push({
+      top,
+      left,
+      color,
+      content,
+      setTop,
+      setLeft,
+      setColor,
+      setContent,
+      count: 0
+    });
+  }
   return boxes;
 }
 
 function tick(box) {
-  const count = box.count + 1;
-  return {
-    top: Math.sin(count / 10) * 10,
-    left: Math.cos(count / 10) * 10,
-    color: count % 255,
-    content: count % 100,
-    count
-  };
+  const count = ++box.count;
+  box.setTop(Math.sin(count / 10) * 10);
+  box.setLeft(Math.cos(count / 10) * 10);
+  box.setColor(count % 255);
+  box.setContent(count % 100);
 }
 
-// More comparable to React
+// More comparable to Knockout/Surplus
 const Main = () => {
-  const [state, setState] = createState({
-    boxes: createBoxes(Benchmark.number)
-  });
+  const boxes = createBoxes(Benchmark.number);
   Benchmark.Framework.Solid.loop = () =>
-    Promise.resolve().then(() => setState("boxes", {}, tick));
+    Promise.resolve().then(() => freeze(() => boxes.forEach(tick)));
 
-  return state.boxes.map((box, index) => (
+  return boxes.map((box, index) => (
     <div class="box-view">
       <div
         class="box"
         id={index}
         style={{
-          top: `${box.top}px`,
-          left: `${box.left}px`,
-          background: `rgb(0,0,${box.color})`
+          top: `${box.top()}px`,
+          left: `${box.left()}px`,
+          background: `rgb(0,0,${box.color()})`
         }}
-        textContent={box.content}
+        textContent={box.content()}
       />
     </div>
   ));

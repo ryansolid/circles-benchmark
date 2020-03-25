@@ -1,4 +1,4 @@
-import resolve from 'rollup-plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 
@@ -14,7 +14,7 @@ const plugins = [
 export default {
 	input: 'src/main.jsx',
 	output: {
-		file: '../../dist/solidsignals.js',
+		file: '../../dist/solidstate.js',
 		format: 'iife'
 	},
 	plugins
