@@ -1,4 +1,4 @@
-import { createSignal, freeze } from "solid-js";
+import { createSignal, batch } from "solid-js";
 import { render } from "solid-js/dom";
 
 function createBoxes(number) {
@@ -35,7 +35,7 @@ function tick(box) {
 const Main = () => {
   const boxes = createBoxes(Benchmark.number);
   Benchmark.Framework.Solid.loop = () =>
-    Promise.resolve().then(() => freeze(() => boxes.forEach(tick)));
+    Promise.resolve().then(() => batch(() => boxes.forEach(tick)));
 
   return boxes.map((box, index) => (
     <div class="box-view">
