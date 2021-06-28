@@ -14,7 +14,7 @@ const plugins = [
 export default {
 	input: 'src/main.jsx',
 	output: {
-		file: '../../dist/solidstate.js',
+		file: '../../dist/solidstore.js',
 		format: 'iife'
 	},
 	plugins

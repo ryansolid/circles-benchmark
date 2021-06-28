@@ -1,5 +1,5 @@
 import { createSignal, batch } from "solid-js";
-import { render } from "solid-js/dom";
+import { render } from "solid-js/web";
 
 function createBoxes(number) {
   const boxes = [];

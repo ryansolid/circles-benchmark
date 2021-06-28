@@ -1,5 +1,5 @@
-import { createState } from "solid-js";
-import { render } from "solid-js/dom";
+import { createStore } from "solid-js/store";
+import { render } from "solid-js/web";
 
 function createBoxes(number) {
   const boxes = [];
@@ -22,7 +22,7 @@ function tick(box) {
 const ALL = {}
 // More comparable to React
 const Main = () => {
-  const [state, setState] = createState({
+  const [state, setState] = createStore({
     boxes: createBoxes(Benchmark.number)
   });
   Benchmark.Framework.SolidState.loop = () =>

@@ -5,8 +5,8 @@ FRAMEWORKS = [
   { name: "LitHTML", version: "1.0.0" },
   { name: "Preact", version: "10.0.1" },
   { name: "React", version: "16.8.6" },
-  { name: "Solid", version: "0.20.1" },
-  { name: "SolidState", version: "0.20.1" },
+  { name: "Solid", version: "1.0.0" },
+  { name: "SolidStore", version: "1.0.0" },
   { name: "Svelte", version: "3.28.0" },
   { name: "Surplus", version: "0.5.3" },
   { name: "Vanilla", version: "" }
